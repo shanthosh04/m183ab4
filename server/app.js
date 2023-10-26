@@ -14,8 +14,6 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/client/index.html");
 });
 
-// Initialize the REST api
-initializeAPI(app);
 
 //start the web server
 const serverPort = 3000;

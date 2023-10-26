@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
-// open the database
+// Open the database
 let db = new sqlite3.Database('./db/chinook.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     console.error(err.message);
@@ -10,8 +10,8 @@ let db = new sqlite3.Database('./db/chinook.db', sqlite3.OPEN_READWRITE, (err) =
 
 db.serialize(() => {
   db.each(`SELECT PlaylistId as id,
-                  Name as name
-           FROM playlists`, (err, row) => {
+                Name as name
+         FROM playlists`, (err, row) => {
     if (err) {
       console.error(err.message);
     }
