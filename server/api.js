@@ -2,6 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+
 const db = new sqlite3.Database('sql.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     console.error(err.message);
@@ -12,7 +13,7 @@ const db = new sqlite3.Database('sql.db', sqlite3.OPEN_READWRITE, (err) => {
 const getCustomersInUSA = (req, res) => {
   const sql = `SELECT username username,
                       password password,
-                      FROM sql`;
+                      FROM users`;
 
   db.all(sql, (err, rows) => {
     if (err) {
