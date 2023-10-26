@@ -14,7 +14,7 @@ const getCustomersInUSA = (req, res) => {
                       password password,
                       FROM sql`;
 
-  db.all(sql, ['USA'], (err, rows) => {
+  db.all(sql, (err, rows) => {
     if (err) {
       console.error(err.message);
       return res.status(500).json({ error: 'Internal Server Error' });
